@@ -3,204 +3,371 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marie Bruand</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
-</head>
-<body>
+  <title>Marie Bruand — Artiste Chorégraphique</title>
 
-  <!-- NAV -->
-  <nav id="nav">
-    <span class="nav-logo">MB</span>
-    <ul>
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#creations">Créations</a></li>
-      <li><a href="#carre-blanc">Le Carré Blanc</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <!-- Bootstrap 5 (local) -->
+  <link rel="stylesheet" href="vendor/bootstrap.min.css" />
+  <!-- Bootstrap Icons (local) -->
+  <link rel="stylesheet" href="vendor/bootstrap-icons.min.css" />
+  <!-- Fonts (local) -->
+  <link rel="stylesheet" href="fonts.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80">
+
+  <!-- ══════════════ NAV ══════════════ -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark mb-navbar">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand mb-brand" href="#hero">MB</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav gap-lg-3">
+          <li class="nav-item"><a class="nav-link mb-nav-link" href="#apropos">À propos</a></li>
+          <li class="nav-item"><a class="nav-link mb-nav-link" href="#creations">Créations</a></li>
+          <li class="nav-item"><a class="nav-link mb-nav-link" href="#carre-blanc">Le Carré Blanc</a></li>
+          <li class="nav-item"><a class="nav-link mb-nav-link" href="#instagram">Instagram</a></li>
+          <li class="nav-item"><a class="nav-link mb-nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <h1 class="hero-title">Marie Bruand</h1>
+  <!-- ══════════════ HERO ══════════════ -->
+  <section id="hero" class="mb-hero d-flex align-items-end">
+    <div class="mb-hero-overlay"></div>
+    <div class="container-fluid px-4 pb-5 position-relative z-1">
+      <h1 class="mb-hero-title">Marie<br>Bruand</h1>
+    </div>
   </section>
 
-  <!-- À PROPOS -->
-  <section id="apropos">
-    <div class="apropos-bg"></div>
-    <div class="apropos-inner">
-      <div class="apropos-photo">
-        <img src="assets/marie-portrait.jpg" alt="Marie Bruand" />
-      </div>
-      <div class="apropos-text">
-        <h2>À PROPOS</h2>
-        <p>
-          Marie Bruand est une artiste chorégraphique, danseuse et pédagogue
-          contemporaine et engagée. À travers ses travaux, elle cherche à réinventer
-          la danse comme vecteur de lien social et de création. Marie porte des
-          projets chorégraphiques et pédagogiques qui rendent l'art et la création
-          accessible à tous·tes.
-        </p>
-        <p>
-          Après plusieurs années de formation au conservatoire de Dijon, à l'école du
-          ballet du Nord et à l'ESMD, Marie fonde la structure "MB Association" afin
-          de créer des projets de création et d'exploration autour du lien entre la
-          danse et les autres arts.
-        </p>
-        <p>
-          Elle est intervenue au Musée des Beaux-Arts de Valenciennes ainsi que lors
-          de l'exposition "Transgression" à l'occasion du festival Utopia à Lille en 2022.
-          Elle poursuit son parcours à Paris où elle crée son premier spectacle
-          "Prélude" en collaboration avec Sarah Nabi, l'IRCAM et le CNRS.
-        </p>
-        <p>
-          C'est en 2025 qu'elle fonde "Le Carré Blanc", un lieu de créations
-          chorégraphiques et pédagogiques où ses recherches artistiques se mettent
-          au service de l'accessibilité à la culture.
-        </p>
-        <p>
-          Danseuse contemporaine avec de grandes influences classiques, son
-          langage est à la fois ancré et aérien. Elle porte son attention sur le poids du
-          corps, sa forme et la dynamique des mouvements à la manière de Laban et
-          William Forsyth. Également inspirée par le travail de Maguy Marin, elle développe le
-          théâtre comme outil à l'expression du mouvement. Sa danse est à la fois
-          expressive, technique et délicate.
-        </p>
+  <!-- ══════════════ À PROPOS ══════════════ -->
+  <section id="apropos" class="mb-section-dark py-6">
+    <div class="mb-apropos-bg"></div>
+    <div class="container position-relative z-1">
+      <div class="row align-items-start g-5">
+        <div class="col-lg-4 col-md-5">
+          <img src="assets/marie-portrait.jpg" alt="Marie Bruand" class="img-fluid mb-portrait" />
+        </div>
+        <div class="col-lg-8 col-md-7">
+          <h2 class="mb-section-title">À PROPOS</h2>
+          <p class="mb-body">
+            Marie Bruand est une artiste chorégraphique, danseuse et pédagogue
+            contemporaine et engagée. À travers ses travaux, elle cherche à réinventer
+            la danse comme vecteur de lien social et de création. Marie porte des
+            projets chorégraphiques et pédagogiques qui rendent l'art et la création
+            accessible à tous·tes.
+          </p>
+          <p class="mb-body">
+            Après plusieurs années de formation au conservatoire de Dijon, à l'école du
+            ballet du Nord et à l'ESMD, Marie fonde la structure "MB Association" afin
+            de créer des projets de création et d'exploration autour du lien entre la
+            danse et les autres arts.
+          </p>
+          <p class="mb-body">
+            Elle est intervenue au Musée des Beaux-Arts de Valenciennes ainsi que lors
+            de l'exposition "Transgression" à l'occasion du festival Utopia à Lille en 2022.
+            Elle poursuit son parcours à Paris où elle crée son premier spectacle
+            "Prélude" en collaboration avec Sarah Nabi, l'IRCAM et le CNRS.
+          </p>
+          <p class="mb-body">
+            C'est en 2025 qu'elle fonde "Le Carré Blanc", un lieu de créations
+            chorégraphiques et pédagogiques où ses recherches artistiques se mettent
+            au service de l'accessibilité à la culture.
+          </p>
+          <p class="mb-body">
+            Danseuse contemporaine avec de grandes influences classiques, son langage
+            est à la fois ancré et aérien. Inspirée par Laban, William Forsyth et
+            Maguy Marin, elle développe le théâtre comme outil à l'expression du
+            mouvement. Sa danse est à la fois expressive, technique et délicate.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CRÉATIONS -->
+  <!-- ══════════════ CRÉATIONS ══════════════ -->
   <section id="creations">
-    <div class="creations-header">
-      <div class="creations-header-bg"></div>
-      <div class="creations-header-content">
-        <h2>CRÉATIONS</h2>
-        <p class="creations-list">PRÉLUDE &nbsp;/&nbsp; LE CONFLIT</p>
+
+    <!-- Header créations -->
+    <div class="mb-creations-header d-flex align-items-center justify-content-center text-center">
+      <div class="mb-creations-header-overlay"></div>
+      <div class="position-relative z-1">
+        <h2 class="mb-creations-title">CRÉATIONS</h2>
+        <p class="mb-creations-sub">PRÉLUDE &nbsp;/&nbsp; LE CONFLIT</p>
       </div>
     </div>
 
     <!-- Prélude -->
-    <div class="creation-item prelude">
-      <div class="creation-bg prelude-bg"></div>
-      <div class="creation-content">
-        <div class="creation-text">
-          <h3>PRÉLUDE</h3>
-          <p>
-            Prélude est une performance dansée et musicale où l'on peut observer une
-            danseuse générer de la musique grâce à ses mouvements.
-          </p>
-          <p>
-            Plongée dans un univers sonore contemporain, la danseuse apprivoise son
-            corps musical et redécouvre ainsi le lien étroit entre danse et musique.
-            La performance remet en question notre propre relation à ces deux arts.
-            Écouter le mouvement et regarder la musique devient possible.
-          </p>
-          <p>
-            "Prélude" est le résultat d'une étroite collaboration entre l'art et la science.
-            C'est par le biais d'une intelligence artificielle et des technologies
-            développées par le laboratoire STMS-IRCAM-CNRS-SU que le corps de la
-            danseuse devient un instrument de création sonore.
-          </p>
-          <a
-            href="https://www.youtube.com/watch?v=EdsBscNFBBA"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-video"
-          >
-            ▶ Captation — Nuit Blanche de Paris 2023
-          </a>
+    <div class="mb-creation-block mb-prelude">
+      <div class="mb-creation-overlay"></div>
+      <div class="container position-relative z-1 py-6">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h3 class="mb-creation-name">PRÉLUDE</h3>
+            <p class="mb-body">
+              Prélude est une performance dansée et musicale où l'on peut observer une
+              danseuse générer de la musique grâce à ses mouvements.
+            </p>
+            <p class="mb-body">
+              Plongée dans un univers sonore contemporain, la danseuse apprivoise son
+              corps musical et redécouvre le lien étroit entre danse et musique.
+              La performance remet en question notre propre relation à ces deux arts :
+              écouter le mouvement et regarder la musique devient possible.
+            </p>
+            <p class="mb-body">
+              "Prélude" est le résultat d'une collaboration entre l'art et la science.
+              Par le biais d'une intelligence artificielle et des technologies
+              développées par le laboratoire STMS-IRCAM-CNRS-SU, le corps de la
+              danseuse devient un instrument de création sonore.
+            </p>
+            <a href="https://www.youtube.com/watch?v=EdsBscNFBBA"
+               target="_blank" rel="noopener noreferrer"
+               class="mb-btn-outline mt-2 d-inline-flex align-items-center gap-2">
+              <i class="bi bi-play-circle"></i>
+              Captation — Nuit Blanche de Paris 2023
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <div class="mb-creation-img mb-prelude-img"></div>
+          </div>
         </div>
-        <div class="creation-media prelude-media"></div>
       </div>
     </div>
 
     <!-- Le Conflit -->
-    <div class="creation-item conflit">
-      <div class="creation-bg conflit-bg"></div>
-      <div class="creation-content conflit-content">
-        <div class="creation-media conflit-media"></div>
-        <div class="creation-text">
-          <h3>LE CONFLIT <span class="tag-wip">en cours de création</span></h3>
-          <p>
-            "Le Conflit" est une satire dansée et théâtrale mettant en scène deux
-            artistes modeleur·euses, avides de popularité et de succès. Dans ce
-            climat, leur rencontre va provoquer un conflit inévitable qui transformera
-            leurs œuvres.
+    <div class="mb-creation-block mb-conflit">
+      <div class="mb-creation-overlay"></div>
+      <div class="container position-relative z-1 py-6">
+        <div class="row align-items-center g-5 flex-lg-row-reverse">
+          <div class="col-lg-6">
+            <h3 class="mb-creation-name">
+              LE CONFLIT
+              <span class="mb-wip">en cours de création</span>
+            </h3>
+            <p class="mb-body">
+              "Le Conflit" est une satire dansée et théâtrale mettant en scène deux
+              artistes modeleur·euses, avides de popularité et de succès. Dans ce
+              climat, leur rencontre va provoquer un conflit inévitable qui transformera
+              leurs œuvres.
+            </p>
+            <p class="mb-body">
+              Entre acrobaties, pas de deux et vitalité, les artistes modèlent leurs
+              créations faites d'argile à l'aide de leur corps et de leurs mouvements.
+              Au rythme de leurs altercations, leur posture corporelle va évoluer et
+              modifier la trace laissée sur l'argile. Les œuvres créées sur scène
+              deviendront les témoins expressifs de leur histoire.
+            </p>
+            <p class="mb-body">
+              En passant par un humour burlesque, la pièce se veut immersive et
+              théâtrale. "Le Conflit" pointe du doigt le narcissisme contemporain et
+              son influence sur l'art et la créativité.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="mb-creation-img mb-conflit-img"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════ LE CARRÉ BLANC ══════════════ -->
+  <section id="carre-blanc" class="mb-carre-blanc">
+    <div class="mb-cb-overlay"></div>
+    <div class="container position-relative z-1 py-6">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <h2 class="mb-cb-title">LE CARRÉ<br>BLANC</h2>
+        </div>
+        <div class="col-lg-7">
+          <p class="mb-body">
+            Le Carré Blanc, c'est un lieu de création, d'expérimentation et de représentation.
+            Par la danse et d'autres formes d'art, l'idée est de créer différents types
+            d'événements autour de cet espace pour sortir des théâtres et requestionner
+            notre rapport à la culture, au spectacle et à la création.
           </p>
-          <p>
-            Entre acrobaties, pas de deux et vitalité, les artistes vont modeler leurs
-            créations faites d'argile à l'aide de leur corps et de leurs mouvements.
-            Au rythme de leurs altercations, leur posture corporelle va évoluer, se
-            transformer et modifier la trace laissée sur l'argile. Les œuvres créées sur
-            scène deviendront alors les témoins expressifs de leur histoire.
-          </p>
-          <p>
-            En passant par un humour burlesque, la pièce se veut immersive et
-            théâtrale. Au cœur de la foule, les danseur·euses vont inviter le public à
-            les suivre dans cette course folle vers le succès. "Le Conflit", issu de
-            l'avidité des deux personnages, pointe du doigt le narcissisme
-            contemporain et son influence sur l'art.
+          <p class="mb-body">
+            À travers des résidences, des ateliers, des interventions scolaires et des
+            spectacles, nous souhaitons promouvoir la danse comme une pratique culturelle
+            accessible à tous·tes et vectrice de lien social et de création artistique.
+            Installé au cœur d'une prairie en Bourgogne et inspiré des toiles de peinture
+            vierges, ce carré blanc nous incite à venir dessus pour explorer, observer et créer.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LE CARRÉ BLANC -->
-  <section id="carre-blanc">
-    <div class="cb-bg"></div>
-    <div class="cb-inner">
-      <h2 class="cb-title">LE CARRÉ<br />BLANC</h2>
-      <div class="cb-text">
-        <p>
-          Le Carré Blanc, c'est un lieu de création, d'expérimentation et de représentation.
-          Par la danse et d'autres formes d'art, l'idée est de créer différents types
-          d'événements autour de cet espace pour sortir des théâtres et requestionner
-          notre rapport à la culture, au spectacle et à la création.
-        </p>
-        <p>
-          À travers des résidences, des ateliers, des interventions scolaires et des
-          spectacles, nous souhaitons promouvoir la danse comme une pratique culturelle
-          accessible à tous·tes et vectrice de lien social et de création artistique.
-          Installé au cœur d'une prairie en Bourgogne et inspiré des toiles de peinture
-          vierges, ce carré blanc nous incite à venir dessus pour explorer, observer et créer.
-        </p>
+  <!-- ══════════════ INSTAGRAM ══════════════ -->
+  <section id="instagram" class="mb-instagram py-6">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="mb-section-title">INSTAGRAM</h2>
+        <p class="mb-body-muted">Suivez l'actualité artistique de Marie</p>
+      </div>
+      <div class="row g-3 justify-content-center mb-4">
+        <!-- Vignettes Instagram — liens vers les profils -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="https://www.instagram.com/mariebruand" target="_blank" rel="noopener noreferrer"
+             class="mb-insta-card">
+            <div class="mb-insta-img" style="background-image:url('assets/prelude-media.jpg')"></div>
+            <div class="mb-insta-hover">
+              <i class="bi bi-instagram fs-3"></i>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="https://www.instagram.com/mariebruand" target="_blank" rel="noopener noreferrer"
+             class="mb-insta-card">
+            <div class="mb-insta-img" style="background-image:url('assets/conflit-media.jpg')"></div>
+            <div class="mb-insta-hover">
+              <i class="bi bi-instagram fs-3"></i>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="https://www.instagram.com/mariebruand" target="_blank" rel="noopener noreferrer"
+             class="mb-insta-card">
+            <div class="mb-insta-img" style="background-image:url('assets/apropos-bg.jpg')"></div>
+            <div class="mb-insta-hover">
+              <i class="bi bi-instagram fs-3"></i>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <a href="https://www.instagram.com/carre.blanc.mb" target="_blank" rel="noopener noreferrer"
+             class="mb-insta-card">
+            <div class="mb-insta-img" style="background-image:url('assets/carre-blanc-bg.jpg')"></div>
+            <div class="mb-insta-hover">
+              <i class="bi bi-instagram fs-3"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="https://www.instagram.com/mariebruand" target="_blank" rel="noopener noreferrer"
+           class="mb-btn-insta d-inline-flex align-items-center gap-2">
+          <i class="bi bi-instagram"></i> @mariebruand
+        </a>
+        <a href="https://www.instagram.com/carre.blanc.mb" target="_blank" rel="noopener noreferrer"
+           class="mb-btn-insta d-inline-flex align-items-center gap-2">
+          <i class="bi bi-instagram"></i> @carré.blanc.mb
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ══════════════ CONTACT ══════════════ -->
   <section id="contact">
-    <div class="contact-cta">
-      <p>
-        Si vous souhaitez participer au projet Carré Blanc (collaboration
-        artistique, intervention scolaire, événements…) n'hésitez pas à remplir
-        ce formulaire de contact.
-      </p>
-      <a href="mailto:mb.association21@gmail.com" class="btn-contact">Formulaire de contact</a>
-    </div>
 
-    <div class="contact-footer">
-      <div class="contact-col">
-        <p class="contact-label">Instagram</p>
-        <a href="https://www.instagram.com/mariebruand" target="_blank" rel="noopener noreferrer">@mariebruand</a>
-        <a href="https://www.instagram.com/carre.blanc.mb" target="_blank" rel="noopener noreferrer">@carré.blanc.mb</a>
-      </div>
-      <div class="contact-col">
-        <p class="contact-label">Mail</p>
-        <a href="mailto:mb.association21@gmail.com">mb.association21@gmail.com</a>
+    <!-- CTA Carré Blanc -->
+    <div class="mb-contact-cta py-6">
+      <div class="container text-center">
+        <h2 class="mb-section-title-dark mb-4">PARTICIPEZ AU PROJET</h2>
+        <p class="mb-body-dark mx-auto" style="max-width:620px">
+          Si vous souhaitez participer au projet Carré Blanc (collaboration artistique,
+          intervention scolaire, événements…) n'hésitez pas à nous contacter.
+        </p>
       </div>
     </div>
 
-    <div class="contact-signature">
-      <span>Marie&nbsp;&nbsp;Bruand</span>
+    <!-- Formulaire -->
+    <div class="mb-contact-form py-6">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="mb-section-title text-center mb-5">CONTACT</h2>
+            <form id="contactForm" novalidate>
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="mb-form-label" for="nom">Nom</label>
+                  <input type="text" id="nom" name="nom" class="form-control mb-form-input"
+                         placeholder="Votre nom" required />
+                  <div class="invalid-feedback">Veuillez entrer votre nom.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="mb-form-label" for="email">Email</label>
+                  <input type="email" id="email" name="email" class="form-control mb-form-input"
+                         placeholder="votre@email.com" required />
+                  <div class="invalid-feedback">Veuillez entrer un email valide.</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="mb-form-label" for="sujet">Sujet</label>
+                <select id="sujet" name="sujet" class="form-select mb-form-input" required>
+                  <option value="" disabled selected>Choisissez un sujet</option>
+                  <option>Collaboration artistique</option>
+                  <option>Intervention scolaire</option>
+                  <option>Résidence au Carré Blanc</option>
+                  <option>Demande de spectacle / performance</option>
+                  <option>Presse / Médias</option>
+                  <option>Autre</option>
+                </select>
+                <div class="invalid-feedback">Veuillez choisir un sujet.</div>
+              </div>
+              <div class="mb-4">
+                <label class="mb-form-label" for="message">Message</label>
+                <textarea id="message" name="message" class="form-control mb-form-input"
+                          rows="6" placeholder="Votre message…" required></textarea>
+                <div class="invalid-feedback">Veuillez écrire un message.</div>
+              </div>
+              <div class="d-flex flex-wrap gap-3 align-items-center">
+                <button type="submit" class="mb-btn-primary d-inline-flex align-items-center gap-2">
+                  <i class="bi bi-send"></i> Envoyer le message
+                </button>
+                <a href="mailto:mb.association21@gmail.com" class="mb-btn-outline-small d-inline-flex align-items-center gap-2">
+                  <i class="bi bi-envelope"></i> Écrire directement par mail
+                </a>
+              </div>
+              <div id="formSuccess" class="mt-4 d-none">
+                <div class="alert mb-alert-success">
+                  <i class="bi bi-check-circle me-2"></i>
+                  Votre message a bien été préparé. Votre client mail va s'ouvrir.
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+
   </section>
 
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="mb-footer py-5">
+    <div class="container">
+      <div class="row justify-content-center text-center g-4 mb-4">
+        <div class="col-auto">
+          <p class="mb-footer-label">Instagram</p>
+          <a href="https://www.instagram.com/mariebruand" target="_blank" rel="noopener noreferrer"
+             class="mb-footer-link d-flex align-items-center gap-2">
+            <i class="bi bi-instagram"></i> @mariebruand
+          </a>
+          <a href="https://www.instagram.com/carre.blanc.mb" target="_blank" rel="noopener noreferrer"
+             class="mb-footer-link d-flex align-items-center gap-2 mt-1">
+            <i class="bi bi-instagram"></i> @carré.blanc.mb
+          </a>
+        </div>
+        <div class="col-auto">
+          <p class="mb-footer-label">Mail</p>
+          <a href="mailto:mb.association21@gmail.com" class="mb-footer-link d-flex align-items-center gap-2">
+            <i class="bi bi-envelope"></i> mb.association21@gmail.com
+          </a>
+        </div>
+      </div>
+      <div class="text-center mb-footer-border pt-4">
+        <p class="mb-signature">Marie&nbsp;&nbsp;Bruand</p>
+        <p class="mb-footer-copy">© 2025 MB Association — Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (local) -->
+  <script src="vendor/bootstrap.bundle.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
