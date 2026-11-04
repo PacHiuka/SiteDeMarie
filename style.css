@@ -1,0 +1,413 @@
+/* ════════════════════════════════════════
+   MARIE BRUAND — style.css
+   Bootstrap 5 + surcharges custom
+   ════════════════════════════════════════ */
+
+:root {
+  --orange:  #E85020;
+  --black:   #0a0a0a;
+  --dark:    #121212;
+  --grey:    #1c1c1c;
+  --white:   #f5f3ef;
+  --sky:     #c8dce8;
+  --muted:   rgba(245,243,239,.55);
+}
+
+/* ── BASE ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* utility */
+.py-6  { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+.z-1   { z-index: 1; }
+
+/* ── NAVBAR ── */
+.mb-navbar {
+  background: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, transparent 100%);
+  transition: background .35s;
+  padding-top: .9rem;
+  padding-bottom: .9rem;
+}
+.mb-navbar.scrolled { background: rgba(10,10,10,.94) !important; }
+
+.mb-brand {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--orange) !important;
+  letter-spacing: .06em;
+}
+
+.mb-nav-link {
+  font-size: .72rem !important;
+  font-weight: 400 !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+  color: rgba(245,243,239,.82) !important;
+  transition: color .2s !important;
+}
+.mb-nav-link:hover,
+.mb-nav-link.active { color: var(--orange) !important; }
+
+/* ── HERO ── */
+.mb-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 580px;
+  background:
+    url('assets/hero-bg.jpg') center center / cover no-repeat;
+  overflow: hidden;
+}
+.mb-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.3) 0%, rgba(0,0,0,.65) 100%);
+}
+.mb-hero-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(5rem, 15vw, 13rem);
+  line-height: .9;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+}
+
+/* ── À PROPOS ── */
+.mb-section-dark {
+  position: relative;
+  overflow: hidden;
+  background: var(--dark);
+}
+.mb-apropos-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(0,0,0,.82) 45%, rgba(0,0,0,.45) 100%),
+    url('assets/apropos-bg.jpg') center top / cover no-repeat;
+}
+.mb-portrait {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(15%);
+}
+.mb-section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: .18em;
+  color: var(--orange);
+  margin-bottom: 1.8rem;
+}
+.mb-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: rgba(245,243,239,.85);
+  margin-bottom: .85rem;
+}
+
+/* ── CRÉATIONS HEADER ── */
+.mb-creations-header {
+  position: relative;
+  height: 55vh;
+  min-height: 300px;
+  overflow: hidden;
+  background: url('assets/creations-bg.jpg') center 30% / cover no-repeat;
+}
+.mb-creations-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.4), rgba(0,0,0,.7));
+}
+.mb-creations-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  color: var(--orange);
+  letter-spacing: .2em;
+}
+.mb-creations-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  letter-spacing: .22em;
+  color: var(--white);
+  margin: 0;
+}
+
+/* ── CRÉATION BLOCKS ── */
+.mb-creation-block {
+  position: relative;
+  overflow: hidden;
+  background: var(--dark);
+}
+.mb-creation-overlay {
+  position: absolute;
+  inset: 0;
+}
+.mb-prelude .mb-creation-overlay {
+  background:
+    linear-gradient(to right, rgba(8,8,10,.95) 55%, rgba(8,8,10,.6) 100%),
+    url('assets/prelude-bg.jpg') center center / cover no-repeat;
+}
+.mb-conflit .mb-creation-overlay {
+  background:
+    linear-gradient(to left, rgba(12,8,6,.95) 55%, rgba(12,8,6,.6) 100%),
+    url('assets/conflit-bg.jpg') center center / cover no-repeat;
+}
+.mb-creation-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .8rem;
+}
+.mb-wip {
+  font-family: 'Inter', sans-serif;
+  font-size: .68rem;
+  font-weight: 300;
+  letter-spacing: .1em;
+  color: var(--muted);
+  border: 1px solid rgba(245,243,239,.22);
+  padding: .2rem .55rem;
+  border-radius: 2px;
+  text-transform: none;
+}
+.mb-creation-img {
+  aspect-ratio: 4/5;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(20%);
+}
+.mb-prelude-img  { background-image: url('assets/prelude-media.jpg'); }
+.mb-conflit-img  { background-image: url('assets/conflit-media.jpg'); }
+
+/* ── BOUTONS ── */
+.mb-btn-outline {
+  font-family: 'Inter', sans-serif;
+  font-size: .76rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  border-bottom: 1px solid var(--orange);
+  padding-bottom: .25rem;
+  transition: opacity .2s;
+  text-decoration: none;
+}
+.mb-btn-outline:hover { opacity: .65; color: var(--orange); }
+
+/* ── LE CARRÉ BLANC ── */
+.mb-carre-blanc {
+  position: relative;
+  overflow: hidden;
+  background: url('assets/carre-blanc-bg.jpg') center center / cover no-repeat;
+  min-height: 480px;
+}
+.mb-cb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,.72) 40%, rgba(0,0,0,.35) 100%);
+}
+.mb-cb-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--white);
+  line-height: .95;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* ── INSTAGRAM ── */
+.mb-instagram { background: var(--grey); }
+.mb-body-muted {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--muted);
+}
+.mb-insta-card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  text-decoration: none;
+}
+.mb-insta-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform .45s ease;
+  filter: grayscale(15%);
+}
+.mb-insta-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(232, 80, 32, .55);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.mb-insta-card:hover .mb-insta-img  { transform: scale(1.06); }
+.mb-insta-card:hover .mb-insta-hover { opacity: 1; }
+
+.mb-btn-insta {
+  font-family: 'Inter', sans-serif;
+  font-size: .8rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--white);
+  border: 1px solid rgba(245,243,239,.3);
+  padding: .6rem 1.4rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: border-color .2s, color .2s;
+}
+.mb-btn-insta:hover { border-color: var(--orange); color: var(--orange); }
+
+/* ── CONTACT CTA ── */
+.mb-contact-cta { background: var(--sky); }
+.mb-section-title-dark {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  letter-spacing: .18em;
+  color: var(--black);
+}
+.mb-body-dark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #1a1a1a;
+}
+
+/* ── FORMULAIRE ── */
+.mb-contact-form { background: var(--dark); }
+.mb-form-label {
+  font-family: 'Inter', sans-serif;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .4rem;
+  display: block;
+}
+.mb-form-input {
+  background: rgba(255,255,255,.05) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  color: var(--white) !important;
+  border-radius: 2px !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1rem !important;
+  transition: border-color .2s !important;
+}
+.mb-form-input::placeholder { color: rgba(245,243,239,.3) !important; }
+.mb-form-input:focus {
+  background: rgba(255,255,255,.07) !important;
+  border-color: var(--orange) !important;
+  box-shadow: none !important;
+  color: var(--white) !important;
+}
+.mb-form-input option { background: var(--dark); color: var(--white); }
+
+.mb-btn-primary {
+  font-family: 'Inter', sans-serif;
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  padding: .75rem 1.8rem;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+.mb-btn-primary:hover { opacity: .82; color: #fff; }
+
+.mb-btn-outline-small {
+  font-family: 'Inter', sans-serif;
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(245,243,239,.7);
+  border: 1px solid rgba(245,243,239,.2);
+  padding: .72rem 1.5rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: border-color .2s, color .2s;
+}
+.mb-btn-outline-small:hover { border-color: var(--orange); color: var(--orange); }
+
+.mb-alert-success {
+  background: rgba(232,80,32,.12);
+  border: 1px solid rgba(232,80,32,.4);
+  color: var(--orange);
+  border-radius: 2px;
+}
+.mb-alert-error {
+  background: rgba(200,30,30,.12);
+  border: 1px solid rgba(200,30,30,.4);
+  color: #e06060;
+  border-radius: 2px;
+}
+
+/* ── FOOTER ── */
+.mb-footer { background: var(--black); }
+.mb-footer-label {
+  font-family: 'Inter', sans-serif;
+  font-size: .68rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: .4rem;
+}
+.mb-footer-link {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: rgba(245,243,239,.75);
+  text-decoration: none;
+  transition: color .2s;
+}
+.mb-footer-link:hover { color: var(--orange); }
+.mb-footer-border { border-top: 1px solid rgba(255,255,255,.07); }
+.mb-signature {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 7vw, 6rem);
+  color: var(--orange);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin: 1rem 0 .4rem;
+}
+.mb-footer-copy {
+  font-family: 'Inter', sans-serif;
+  font-size: .68rem;
+  letter-spacing: .1em;
+  color: var(--muted);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 767px) {
+  .mb-creation-img { display: none; }
+  .mb-hero-title { font-size: clamp(3.5rem, 18vw, 6rem); }
+}
