@@ -281,10 +281,13 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <h2 class="mb-section-title text-center mb-5">CONTACT</h2>
-            <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <form id="contactForm" novalidate>
+              <!-- Web3Forms -->
+              <input type="hidden" name="access_key" value="METTRE_CLE_WEB3FORMS_ICI" />
+              <input type="hidden" name="subject" value="[mariebruand.fr] Nouveau message de contact" />
+              <input type="hidden" name="from_name" value="Site Marie Bruand" />
               <!-- Honeypot anti-spam -->
-              <p class="d-none"><input name="bot-field" /></p>
-              <input type="hidden" name="form-name" value="contact" />
+              <input type="checkbox" name="botcheck" class="d-none" />
               <div class="row g-3 mb-3">
                 <div class="col-md-6">
                   <label class="mb-form-label" for="nom">Nom</label>

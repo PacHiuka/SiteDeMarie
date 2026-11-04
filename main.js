@@ -4,7 +4,7 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// Contact form — Netlify Forms (fetch) avec fallback mailto
+// Contact form — Web3Forms
 const form = document.getElementById('contactForm');
 form.addEventListener('submit', async function (e) {
   e.preventDefault();
@@ -13,42 +13,50 @@ form.addEventListener('submit', async function (e) {
     return;
   }
 
-  const btn = this.querySelector('button[type="submit"]');
+  const btn      = this.querySelector('button[type="submit"]');
   const successEl = document.getElementById('formSuccess');
-  const errorEl = document.getElementById('formError');
+  const errorEl   = document.getElementById('formError');
 
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Envoi…';
 
-  try {
-    const data = new FormData(this);
-    const res = await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data).toString(),
-    });
+  // Construire le payload Web3Forms
+  const nom     = document.getElementById('nom').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const sujet   = document.getElementById('sujet').value;
+  const message = document.getElementById('message').value.trim();
 
-    if (res.ok) {
+  const payload = {
+    access_key:  this.querySelector('[name="access_key"]').value,
+    subject:     this.querySelector('[name="subject"]').value,
+    from_name:   this.querySelector('[name="from_name"]').value,
+    botcheck:    this.querySelector('[name="botcheck"]').checked,
+    name:        nom,
+    email:       email,
+    sujet:       sujet,
+    message:     message,
+  };
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body:    JSON.stringify(payload),
+    });
+    const data = await res.json();
+
+    if (data.success) {
       successEl.classList.remove('d-none');
       errorEl.classList.add('d-none');
       this.reset();
       this.classList.remove('was-validated');
     } else {
-      throw new Error('Netlify response ' + res.status);
+      throw new Error(data.message || 'Erreur Web3Forms');
     }
-  } catch {
-    // Fallback mailto si Netlify Forms non disponible (dev local)
-    const nom     = document.getElementById('nom').value.trim();
-    const email   = document.getElementById('email').value.trim();
-    const sujet   = document.getElementById('sujet').value;
-    const message = document.getElementById('message').value.trim();
-    const body    = `Nom : ${nom}\nEmail : ${email}\n\n${message}`;
-    window.location.href =
-      `mailto:mb.association21@gmail.com` +
-      `?subject=${encodeURIComponent('[Site MB] ' + sujet)}` +
-      `&body=${encodeURIComponent(body)}`;
-    successEl.classList.remove('d-none');
-    errorEl.classList.add('d-none');
+  } catch (err) {
+    errorEl.classList.remove('d-none');
+    successEl.classList.add('d-none');
+    console.error(err);
   } finally {
     btn.disabled = false;
     btn.innerHTML = '<i class="bi bi-send"></i> Envoyer le message';
