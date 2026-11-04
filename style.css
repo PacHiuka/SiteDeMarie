@@ -364,6 +364,12 @@ body {
   color: var(--orange);
   border-radius: 2px;
 }
+.mb-alert-error {
+  background: rgba(200,30,30,.12);
+  border: 1px solid rgba(200,30,30,.4);
+  color: #e06060;
+  border-radius: 2px;
+}
 
 /* ── FOOTER ── */
 .mb-footer { background: var(--black); }

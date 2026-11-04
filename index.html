@@ -281,7 +281,10 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <h2 class="mb-section-title text-center mb-5">CONTACT</h2>
-            <form id="contactForm" novalidate>
+            <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+              <!-- Honeypot anti-spam -->
+              <p class="d-none"><input name="bot-field" /></p>
+              <input type="hidden" name="form-name" value="contact" />
               <div class="row g-3 mb-3">
                 <div class="col-md-6">
                   <label class="mb-form-label" for="nom">Nom</label>
@@ -326,7 +329,13 @@
               <div id="formSuccess" class="mt-4 d-none">
                 <div class="alert mb-alert-success">
                   <i class="bi bi-check-circle me-2"></i>
-                  Votre message a bien été préparé. Votre client mail va s'ouvrir.
+                  Message envoyé ! Marie vous répondra dans les meilleurs délais.
+                </div>
+              </div>
+              <div id="formError" class="mt-4 d-none">
+                <div class="alert mb-alert-error">
+                  <i class="bi bi-exclamation-circle me-2"></i>
+                  Une erreur est survenue. Essayez le lien mail direct ci-dessous.
                 </div>
               </div>
             </form>
